@@ -127,7 +127,7 @@ python dcft.py -h
 So running:
 
 ```
-python dcft.py --ta 20 --td 10 --pa 32 --pd 32 --dp 4 --image mytiles.png
+python dcft.py --ta 20 --td 10 --pa 32 --pd 32 --bp 4 --image mytiles.png
 ```
 
 will create a file called `mytiles.png` with each tile measuring 32
