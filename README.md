@@ -9,7 +9,7 @@ Look at the:
 examplefloor.png
 ```
 
-PNG image in the repository to get anu idea.
+PNG image in the repository to get an idea.
 
 It runs as a CGI script called `dcft.py` on a webserver with CGI scripting
 enabled and a Python 3 interpreter available to the called CGI programs.
@@ -32,7 +32,7 @@ For example my webserver (lighttpd) has a document root:
 with a subdirectory:
 
 ```
-/home/andyc/www/cgi-bin/
+/home/andyc/www/cgi-bin
 ```
 
 for CGI scripts so I copy `dcft.py` to:
@@ -134,6 +134,14 @@ will create a file called `mytiles.png` with each tile measuring 32
 pixels across by 32 pixel deep and 20 tiles across and 10 tiles deep.
 The width of the tile border will be 4 pixels.
 
+## Performance
+
+The bigger an image you ask the script to create the longer it will take.
+The image is created in memory as a Python byte array with one pixel
+taking up one byte and then this data gets compressed using the zlib
+library.  Big images take alot of memory, take time to create and more
+memory and time to compress. Please be patient.
+
 ## "It breaks really easily!"
 
 The code has minimal error checking so you can break it really easily.
@@ -144,7 +152,7 @@ in the PNG image creation part of the code.
 
 I have only run this on `lighttpd` so it may not port to other
 webservers but if you look at the code it doesn't do anything
-partuclarly platform independent so I don't expect there to be
+particularly platform dependent so I don't expect there to be
 any issues.
 
 ## Reference links
